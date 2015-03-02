@@ -1,19 +1,46 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.autohome.autohomeclient.StartScreen">
-    
+
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-    <LinearLayout
-        android:orientation="vertical"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/start_screen_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/main_content"
         android:layout_below="@id/toolbar">
-    </LinearLayout>
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/welcome"
+            android:textSize="50sp"
+            android:theme="@style/Base.TextAppearance.AppCompat.Display4" />
+
+        <Button
+            android:id="@+id/start_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="161dp"
+            android:text="@string/login_button"
+            android:layout_below="@+id/welcome_text"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/start_register_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100"
+            android:text="@string/register_button"
+            android:layout_below="@+id/start_login_button"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

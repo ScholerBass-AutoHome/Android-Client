@@ -4,4 +4,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="welcome">Welcome!</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
 </resources>
