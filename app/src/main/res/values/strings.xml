@@ -13,5 +13,6 @@
     <string name="title_activity_register">Register</string>
     <string name="email_hint">Email</string>
     <string name="confirm_password_hint">Confirm Password</string>
+	<string name="toolbar_title">AutoHome</string>
 
 </resources>
