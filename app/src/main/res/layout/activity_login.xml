@@ -16,12 +16,15 @@
         android:layout_below="@id/toolbar">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="fill_parent"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:hint="@string/username_hint"
-            app:baseColor="@color/accent"
-            app:primaryColor="@color/primary"/>
+            app:baseColor="#000000"
+            app:primaryColor="@color/accent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            app:floatingLabel="highlight"/>
 
     </RelativeLayout>
 
