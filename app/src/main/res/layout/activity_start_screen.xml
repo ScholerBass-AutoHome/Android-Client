@@ -52,7 +52,8 @@
             android:background="@drawable/button"
             android:theme="@style/Base.TextAppearance.AppCompat.Button"
             android:textAllCaps="true"
-            android:fontFamily="sans-serif-medium"/>
+            android:fontFamily="sans-serif-medium"
+			android:onClick="register"/>
 
     </RelativeLayout>
 

@@ -42,4 +42,9 @@ public class StartScreen extends ActionBarActivity {
     public void login(View view) {
         startActivity(new Intent(this, Login.class));
     }
+
+	public void register(View view) {
+		startActivity(new Intent(this, Register.class));
+	}
+
 }
