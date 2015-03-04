@@ -55,7 +55,6 @@
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20dp"
 			android:layout_below="@id/register_email"
-			android:inputType="textPassword"
 			app:minCharacters="8"/>
 
 		<com.rengwuxian.materialedittext.MaterialEditText
@@ -67,7 +66,6 @@
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20dp"
 			android:layout_below="@id/register_password"
-			android:inputType="textPassword"
 			app:minCharacters="8"/>
 
 		<Button

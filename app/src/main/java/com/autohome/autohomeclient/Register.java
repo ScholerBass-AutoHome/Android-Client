@@ -21,10 +21,10 @@ public class Register extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-		final EditText usernameEditText = (EditText) findViewById(R.id.register_username);
-		final EditText emailEditText = (EditText) findViewById(R.id.register_email);
-		final EditText passwordEditText = (EditText) findViewById(R.id.register_password);
-		final EditText confirmPasswordEditText = (EditText) findViewById(R.id.register_password_confirm);
+		usernameEditText = (EditText) findViewById(R.id.register_username);
+		emailEditText = (EditText) findViewById(R.id.register_email);
+		passwordEditText = (EditText) findViewById(R.id.register_password);
+		confirmPasswordEditText = (EditText) findViewById(R.id.register_password_confirm);
 
 		confirmPasswordEditText.addTextChangedListener(new TextWatcher() {
 
@@ -42,7 +42,7 @@ public class Register extends ActionBarActivity {
 
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				if (!s.equals(passwordEditText.getText().toString())) {
+				if (!s.equals(passwordEditText.getText())) {
 					confirmPasswordEditText.setError("Passwords don't match");
 				}
 			}
