@@ -41,4 +41,7 @@ dependencies {
 
 	//Optional for twoway  (coming soon)
 	//compile 'com.github.gabrielemariotti.cards:cardslib-extra-twoway:2.0.1'
+
+	compile 'com.melnykov:floatingactionbutton:1.2.0'
+
 }
