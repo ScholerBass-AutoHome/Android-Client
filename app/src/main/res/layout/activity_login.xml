@@ -24,7 +24,8 @@
             android:theme="@style/Base.TextAppearance.AppCompat.Display3"
             android:textColor="@color/primary_text"
             android:textSize="56sp"
-            android:fontFamily="sans-serif-light"/>
+			android:layout_marginTop="10sp"
+			android:fontFamily="sans-serif-light"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="200sp"
