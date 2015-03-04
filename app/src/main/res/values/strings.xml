@@ -14,5 +14,6 @@
     <string name="email_hint">Email</string>
     <string name="confirm_password_hint">Confirm Password</string>
 	<string name="toolbar_title">AutoHome</string>
+	<string name="title_activity_rooms">Rooms</string>
 
 </resources>
