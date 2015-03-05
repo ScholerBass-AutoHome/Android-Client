@@ -43,11 +43,11 @@ public class StartScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void login(View view) {
+    public void launch_login(View view) {
         startActivity(new Intent(this, Login.class));
     }
 
-	public void register(View view) {
+	public void launch_register(View view) {
 		startActivity(new Intent(this, Register.class));
 	}
 

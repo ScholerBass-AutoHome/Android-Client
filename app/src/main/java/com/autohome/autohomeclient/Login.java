@@ -1,10 +1,12 @@
 package com.autohome.autohomeclient;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Login extends ActionBarActivity {
@@ -41,5 +43,8 @@ public class Login extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+	public void login (View view) {
+		startActivity(new Intent(this, Rooms.class));
+	}
 
 }

@@ -32,6 +32,7 @@
 			android:id="@+id/register_username"
 			android:hint="@string/username_hint"
 			app:baseColor="#000000"
+			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20sp"
 			android:layout_below="@id/register_text"/>
@@ -42,6 +43,7 @@
 			android:id="@+id/register_email"
 			android:hint="@string/email_hint"
 			app:baseColor="#000000"
+			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20dp"
 			android:layout_below="@id/register_username"
@@ -53,6 +55,7 @@
 			android:id="@+id/register_password"
 			android:hint="@string/password_hint"
 			app:baseColor="#000000"
+			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20dp"
 			android:layout_below="@id/register_email"
@@ -64,6 +67,7 @@
 			android:id="@+id/register_password_confirm"
 			android:hint="@string/confirm_password_hint"
 			app:baseColor="#000000"
+			app:primaryColor="@color/accent"
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20dp"
 			android:layout_below="@id/register_password"
@@ -81,6 +85,7 @@
 			android:background="@drawable/button"
 			android:theme="@style/Base.TextAppearance.AppCompat.Button"
 			android:textAllCaps="true"
+			android:onClick="register"
 			android:fontFamily="sans-serif-medium"/>
 
 	</RelativeLayout>
