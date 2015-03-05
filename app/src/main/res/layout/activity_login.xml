@@ -28,7 +28,7 @@
 			android:fontFamily="sans-serif-light"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="200sp"
+            android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:hint="@string/username_hint"
@@ -39,7 +39,7 @@
             android:layout_below="@id/login_text"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="200sp"
+            android:layout_width="300sp"
             android:layout_height="wrap_content"
             android:id="@+id/password"
             android:hint="@string/password_hint"
