@@ -39,7 +39,7 @@ public class RoomListing extends ActionBarActivity {
 				String roomName = (String) listView.getItemAtPosition(position);
 
 				Intent intent = new Intent(getBaseContext(), Room.class);
-				intent.putExtra("Room name", roomName);
+				intent.putExtra(Shared.ROOM_NAME_INTENT_EXTRA_NAME, roomName);
 				startActivity(intent);
 			}
 		});
