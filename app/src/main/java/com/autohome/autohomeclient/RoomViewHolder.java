@@ -9,7 +9,7 @@ import com.twotoasters.android.support.v7.widget.RecyclerView;
 /**
  * Created by benscholer on 3/6/15.
  */
-public class RoomViewHolder extends android.support.v7.widget.RecyclerView.ViewHolder {
+public class RoomViewHolder extends RecyclerView.ViewHolder {
 	public final CardView cardView;
 	public final TextView textView;
 

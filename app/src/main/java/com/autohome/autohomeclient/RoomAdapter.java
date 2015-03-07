@@ -1,11 +1,13 @@
 package com.autohome.autohomeclient;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.twotoasters.android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -14,7 +16,7 @@ import java.util.Random;
  */
 public class RoomAdapter extends RecyclerView.Adapter<RoomViewHolder> {
 
-	private List<Room> rooms;
+	private List<Room> rooms = new ArrayList<>();
 
 	public RoomAdapter(List<Room> rooms) {
 		this.rooms = rooms;

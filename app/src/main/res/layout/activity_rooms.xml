@@ -9,10 +9,11 @@
 		android:id="@+id/toolbar"
 		layout="@layout/toolbar"/>
 
-	<com.twotoasters.android.support.v7.widget.RecyclerView
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:layout_below="@id/toolbar"/>
+	<RecyclerView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/toolbar"
+		android:id="@+id/room_recycler_view"/>
 
 	<com.melnykov.fab.FloatingActionButton
 		android:id="@+id/fab"
