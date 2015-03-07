@@ -44,4 +44,6 @@ dependencies {
 
 	compile 'com.melnykov:floatingactionbutton:1.2.0'
 
+	//RecyclerView library
+	compile 'com.twotoasters.RecyclerViewLib:library:1.0.+@aar'
 }
