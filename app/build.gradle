@@ -19,10 +19,6 @@ android {
     }
 }
 
-repositories {
-	jcenter()
-}
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
@@ -50,7 +46,4 @@ dependencies {
 
 	//RecyclerView library
 	compile 'com.twotoasters.RecyclerViewLib:library:1.0.+@aar'
-
-	//MaterialDesign library
-	compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
 }
