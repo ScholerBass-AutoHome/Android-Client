@@ -15,5 +15,6 @@
     <string name="confirm_password_hint">Confirm Password</string>
 	<string name="toolbar_title">AutoHome</string>
 	<string name="title_activity_rooms">Rooms</string>
+	<string name="title_activity_room">Room</string>
 
 </resources>
