@@ -9,13 +9,23 @@
 		android:id="@+id/toolbar"
 		layout="@layout/toolbar"/>
 
-	<it.gmariotti.cardslib.library.view.CardListView
-		android:id="@+id/card_list"
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/recycler_view"
 		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:cacheColorHint="@android:color/transparent"
+		android:scrollbars="vertical"/>
+
+	<com.melnykov.fab.FloatingActionButton
+		android:id="@+id/fab"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginLeft="12dp"
-		android:layout_marginRight="12dp"
-		android:layout_marginTop="12dp"
-		android:layout_below="@id/toolbar"/>
+		android:layout_gravity="bottom|right"
+		android:layout_margin="16dp"
+		android:src="@drawable/ic_action_new"
+		fab:fab_colorNormal="@color/accent"
+		fab:fab_colorPressed="@color/accent"
+		fab:fab_shadow="true"
+		fab:fab_colorRipple="@color/accent"/>
 
 </RelativeLayout>
