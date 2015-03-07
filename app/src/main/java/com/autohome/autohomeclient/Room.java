@@ -1,22 +1,28 @@
 package com.autohome.autohomeclient;
 
-import java.io.Serializable;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/**
- * Created by benscholer on 3/6/15.
- */
-public class Room implements Serializable {
-	private String name;
 
-	public Room(String name) {
-		this.name = name;
-	}
+public class Room extends ActionBarActivity {
 
-	public String getName() {
-		return name;
-	}
+	String roomName;
+	Toolbar toolbar;
 
-	public void setName(String name) {
-		this.name = name;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_room);
+
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			roomName = extras.getString(Shared.ROOM_NAME_INTENT_EXTRA_NAME);
+		}
+
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setTitle(roomName);
 	}
 }

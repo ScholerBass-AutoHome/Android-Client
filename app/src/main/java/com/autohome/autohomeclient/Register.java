@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -57,7 +55,7 @@ public class Register extends ActionBarActivity {
     }
 
 	public void register (View view) {
-		startActivity(new Intent(this, Rooms.class));
+		startActivity(new Intent(this, RoomListing.class));
 	}
 
 
