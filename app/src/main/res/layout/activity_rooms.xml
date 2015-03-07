@@ -9,12 +9,11 @@
 		android:id="@+id/toolbar"
 		layout="@layout/toolbar"/>
 
-	<android.support.v7.widget.RecyclerView
-		android:id="@+id/recycler_view"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:cacheColorHint="@android:color/transparent"
-		android:scrollbars="vertical"/>
+	<ListView
+		android:id="@+id/list"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent">
+	</ListView>
 
 	<com.melnykov.fab.FloatingActionButton
 		android:id="@+id/fab"
