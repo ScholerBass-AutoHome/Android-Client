@@ -26,11 +26,11 @@ public class RoomListing extends ActionBarActivity {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 		toolbar.setTitle("Rooms");
-		
+
 		String[] rooms = new String[]{"Living Room", "Kitchen"};
 
 		//Defining new Adapter
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, rooms);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
 
 		//Assign adapter to listView
 		listView.setAdapter(adapter);
