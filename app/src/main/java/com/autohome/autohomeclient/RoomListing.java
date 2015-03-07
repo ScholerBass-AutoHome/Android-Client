@@ -3,6 +3,7 @@ package com.autohome.autohomeclient;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 public class RoomListing extends ActionBarActivity {
 
 	ListView listView;
+	Toolbar toolbar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,10 @@ public class RoomListing extends ActionBarActivity {
 		setContentView(R.layout.activity_room_listing);
 
 		listView = (ListView) findViewById(R.id.list);
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+		toolbar.setTitle("Rooms");
+		
 		String[] rooms = new String[]{"Living Room", "Kitchen"};
 
 		//Defining new Adapter
