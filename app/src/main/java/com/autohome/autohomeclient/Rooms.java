@@ -1,39 +1,38 @@
 package com.autohome.autohomeclient;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class Rooms extends ActionBarActivity {
+
+	ListView listView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_rooms);
-	}
 
+		listView = (ListView) findViewById(R.id.room_list);
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Toast.makeText(getApplicationContext(), "Clicked ListItem Number " + position, Toast.LENGTH_SHORT).show();
+			}
+		});
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_rooms, menu);
-		return true;
-	}
+		ArrayList<String> rooms = new ArrayList<>();
+		rooms.add("Living Room");
+		rooms.add("Kitchen");
+		rooms.add("Bedroom");
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
+		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_list_item, rooms);
 	}
 }
