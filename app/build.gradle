@@ -53,4 +53,7 @@ dependencies {
 
 	//MaterialDesign library
 	compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
+
+	//Material Dialogs library
+	compile 'com.afollestad:material-dialogs:0.6.3.5'
 }
