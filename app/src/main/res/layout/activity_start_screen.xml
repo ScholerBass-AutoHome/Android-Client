@@ -45,7 +45,9 @@
         <Button
             android:id="@+id/start_register_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
+			android:minWidth="88dp"
+			android:padding="5dp"
             android:text="@string/register_button"
             android:layout_alignTop="@+id/start_login_button"
             android:layout_alignParentRight="true"
