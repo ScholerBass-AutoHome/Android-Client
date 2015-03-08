@@ -15,7 +15,7 @@ import it.gmariotti.cardslib.library.view.CardGridView;
 import it.gmariotti.cardslib.library.view.CardListView;
 
 
-public class Room extends ActionBarActivity {
+public class RoomActivity extends ActionBarActivity {
 
 	private ArrayList<Card> cards = new ArrayList<>();
 	String roomName;

@@ -17,17 +17,26 @@ public class SingleApplianceCard extends Card {
 	private ImageButton overflowButton;
 	private ImageButton applianceButton;
 	private String name;
-	private int applianceImageResource;
+	private int applianceImageResourceOn;
+	private int applianceImageResourceOff;
+	private Appliance appliance;
 
-	public SingleApplianceCard(Context context, String name, int applianceImage) {
+	public SingleApplianceCard(Context context, String name, int applianceImageOn, int applianceImageOff) {
 		super(context, R.layout.single_appliance_card);
-		init(name, applianceImage);
+		init(name, applianceImageOn, applianceImageOff);
 	}
 
-	private void init(String name, int applianceImage) {
+	public SingleApplianceCard(Context context, Appliance appliance) {
+		super(context, R.layout.single_appliance_card);
+		this.appliance = appliance;
+		init(this.appliance.getName(), this.appliance.getImageResourceOn(), this.appliance.getImageResourceOff());
+	}
+
+	private void init(String name, int applianceImageOn, int applianceImageOff) {
 		this.setShadow(true);
 		this.name = name;
-		this.applianceImageResource = applianceImage;
+		this.applianceImageResourceOn = applianceImageOn;
+		this.applianceImageResourceOff = applianceImageOff;
 	}
 
 	@Override
@@ -37,6 +46,12 @@ public class SingleApplianceCard extends Card {
 		applianceButton = (ImageButton) view.findViewById(R.id.appliance_image);
 
 		applianceName.setText(name);
-		applianceButton.setImageResource(applianceImageResource);
+		applianceButton.setImageResource(applianceImageResourceOff);
+		applianceButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				applianceButton.setImageResource(applianceImageResourceOn);
+			}
+		});
 	}
 }
