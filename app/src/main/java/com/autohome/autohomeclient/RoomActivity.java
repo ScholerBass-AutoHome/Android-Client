@@ -1,18 +1,14 @@
 package com.autohome.autohomeclient;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
 
 import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.internal.CardGridArrayAdapter;
 import it.gmariotti.cardslib.library.view.CardGridView;
-import it.gmariotti.cardslib.library.view.CardListView;
 
 
 public class RoomActivity extends ActionBarActivity {
@@ -31,10 +27,11 @@ public class RoomActivity extends ActionBarActivity {
 		if (extras != null) {
 			roomName = extras.getString(Shared.ROOM_NAME_INTENT_EXTRA_NAME);
 		}
-
-		SingleApplianceCard card = new SingleApplianceCard(this, "Light", R.drawable.light_on);
-		cards.add(card);
-
+		for (int i = 0; i < 5; i++) {
+			Appliance appliance = new Appliance("Light", R.drawable.light_on, R.drawable.light_off, 2, 0, false);
+			SingleApplianceCard card = new SingleApplianceCard(this, appliance);
+			cards.add(card);
+		}
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		CardGridArrayAdapter cardArrayAdapter = new CardGridArrayAdapter(this, cards);
 		cardGridView = (CardGridView) findViewById(R.id.appliance_grid_view);
