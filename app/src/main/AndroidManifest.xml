@@ -32,6 +32,10 @@
             android:name=".RoomActivity"
             android:label="@string/title_activity_room" >
         </activity>
+        <activity
+            android:name=".GroupCreator"
+            android:label="@string/title_activity_group_creator" >
+        </activity>
     </application>
 
 </manifest>

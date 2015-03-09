@@ -16,5 +16,6 @@
 	<string name="toolbar_title">AutoHome</string>
 	<string name="title_activity_rooms">Rooms</string>
 	<string name="title_activity_room">Room</string>
+	<string name="title_activity_group_creator">GroupCreator</string>
 
 </resources>
