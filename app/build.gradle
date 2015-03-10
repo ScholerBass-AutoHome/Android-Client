@@ -34,18 +34,6 @@ dependencies {
 	//Optional for built-in cards
 	compile 'com.github.gabrielemariotti.cards:cardslib-cards:2.0.1'
 
-	//Optional for RecyclerView
-	compile 'com.github.gabrielemariotti.cards:cardslib-recyclerview:2.0.1'
-
-	//Optional for staggered grid view
-	compile 'com.github.gabrielemariotti.cards:cardslib-extra-staggeredgrid:2.0.1'
-
-	//Optional for drag and drop
-	compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.0.1'
-
-	//Optional for twoway  (coming soon)
-	//compile 'com.github.gabrielemariotti.cards:cardslib-extra-twoway:2.0.1'
-
 	compile 'com.melnykov:floatingactionbutton:1.2.0'
 
 	//RecyclerView library
@@ -56,4 +44,7 @@ dependencies {
 
 	//Material Dialogs library
 	compile 'com.afollestad:material-dialogs:0.6.3.5'
+
+    //Floating Action Button library
+    compile 'com.shamanland:fab:0.0.5'
 }
