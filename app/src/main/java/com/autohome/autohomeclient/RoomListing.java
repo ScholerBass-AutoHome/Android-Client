@@ -25,13 +25,11 @@ public class RoomListing extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_room_listing);
 
-        ImageView icon = new ImageView(this);
-        icon.setImageResource(R.drawable.ic_action_new);
-        FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
-                .setContentView(icon)
-                .build();
-
-		actionButton.setBackgroundColor(getResources().getColor(R.color.accent));
+		ImageView icon = new ImageView(this);
+		icon.setImageResource(R.drawable.ic_action_new);
+		FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
+				.setContentView(icon)
+				.build();
 
 		listView = (ListView) findViewById(R.id.list);
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
