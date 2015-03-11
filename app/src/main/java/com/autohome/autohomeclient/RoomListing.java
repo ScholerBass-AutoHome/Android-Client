@@ -26,7 +26,7 @@ public class RoomListing extends ActionBarActivity {
 		setContentView(R.layout.activity_room_listing);
 
 		ImageView icon = new ImageView(this);
-		icon.setImageResource(R.drawable.ic_action_new);
+		icon.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_new));
 		FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
 				.setContentView(icon)
 				.setBackgroundDrawable(R.drawable.button_action_pink_selector)
@@ -61,7 +61,6 @@ public class RoomListing extends ActionBarActivity {
 
 
 	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
