@@ -29,6 +29,7 @@ public class RoomListing extends ActionBarActivity {
 		icon.setImageResource(R.drawable.ic_action_new);
 		FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
 				.setContentView(icon)
+				.setBackgroundDrawable(R.drawable.button_action_pink_selector)
 				.build();
 
 		listView = (ListView) findViewById(R.id.list);
