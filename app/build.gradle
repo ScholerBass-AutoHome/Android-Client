@@ -46,5 +46,5 @@ dependencies {
 	compile 'com.afollestad:material-dialogs:0.6.3.5'
 
     //Floating Action Button library
-	compile 'com.getbase:floatingactionbutton:1.8.0'
+	compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
 }
