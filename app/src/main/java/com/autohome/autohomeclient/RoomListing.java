@@ -31,6 +31,8 @@ public class RoomListing extends ActionBarActivity {
                 .setContentView(icon)
                 .build();
 
+		actionButton.setBackgroundColor(getResources().getColor(R.color.accent));
+
 		listView = (ListView) findViewById(R.id.list);
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
