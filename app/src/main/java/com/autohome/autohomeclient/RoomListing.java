@@ -12,6 +12,8 @@ import android.widget.ListView;
 
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
+import java.util.ArrayList;
+
 public class RoomListing extends ActionBarActivity {
 
 	ListView listView;
@@ -34,7 +36,7 @@ public class RoomListing extends ActionBarActivity {
 
 		toolbar.setTitle("Rooms");
 
-		String[] rooms = new String[]{"Living Room", "Kitchen"};
+		ArrayList<String> rooms = new ArrayList<>();
 
 		//Defining new Adapter
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
