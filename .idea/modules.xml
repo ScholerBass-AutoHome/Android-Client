@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Client.iml" filepath="$PROJECT_DIR$/Android-Client.iml" />
       <module fileurl="file://$PROJECT_DIR$/AutoHomeClient.iml" filepath="$PROJECT_DIR$/AutoHomeClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MaterialTabsModule/MaterialTabsModule.iml" filepath="$PROJECT_DIR$/MaterialTabsModule/MaterialTabsModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
