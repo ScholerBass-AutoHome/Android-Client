@@ -1,22 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+	compileSdkVersion 21
+	buildToolsVersion "21.1.2"
 
-    defaultConfig {
-        applicationId "com.autohome.autohomeclient"
-        minSdkVersion 16
-        targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+	defaultConfig {
+		applicationId "com.autohome.autohomeclient"
+		minSdkVersion 16
+		targetSdkVersion 21
+		versionCode 1
+		versionName "1.0"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
 }
 
 repositories {
@@ -39,4 +39,6 @@ dependencies {
 	compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
 	//Tabs library
 	compile project(':MaterialTabsModule')
+	//Showcase library
+	compile 'com.github.amlcurran.showcaseview:library:5.0.0'
 }
