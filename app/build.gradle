@@ -34,17 +34,16 @@ dependencies {
 	//Optional for built-in cards
 	compile 'com.github.gabrielemariotti.cards:cardslib-cards:2.0.1'
 
-	compile 'com.melnykov:floatingactionbutton:1.2.0'
-
 	//RecyclerView library
 	compile 'com.twotoasters.RecyclerViewLib:library:1.0.+@aar'
-
-	//MaterialDesign library
-	compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
 
 	//Material Dialogs library
 	compile 'com.afollestad:material-dialogs:0.6.3.5'
 
     //Floating Action Button library
 	compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
+
+	//Tabs library
+	compile 'it.neokree:MaterialTabs:0.11'
+
 }
