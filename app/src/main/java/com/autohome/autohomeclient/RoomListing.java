@@ -21,6 +21,7 @@ public class RoomListing extends ActionBarActivity {
 	ListView listView;
 	Toolbar toolbar;
 	ArrayList<String> rooms = new ArrayList<>();
+	String newRoomName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +44,19 @@ public class RoomListing extends ActionBarActivity {
 						.customView(R.layout.custom_view_addroom_edittext, wrapInScrollView)
 						.positiveText(R.string.create_new_room_dialog_positive)
 						.negativeText(R.string.negative)
+						.callback(new MaterialDialog.ButtonCallback() {
+							@Override
+							public void onPositive(MaterialDialog dialog) {
+								super.onPositive(dialog);
+								EditText text = (EditText) dialog.getCustomView();
+							}
+						})
 						.build();
 
-				EditText text = (EditText) dialog.getCustomView();
+
 
 				dialog.show();
+
 			}
 		});
 
