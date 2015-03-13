@@ -35,31 +35,14 @@ public class RoomListing extends ActionBarActivity {
 		actionButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				MaterialDialog mMaterialDialog = new MaterialDialog()
-						.setTitle("MaterialDialog")
-						.setMessage("Hello world!")
-						.setPositiveButton("OK", new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								mMaterialDialog.dismiss();
-								...
-							}
-						})
-						.setNegativeButton("CANCEL", new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								mMaterialDialog.dismiss();
-								...
-							}
-						});
-
-				mMaterialDialog.show();
-
-// You can change the message anytime. before show
-				mMaterialDialog.setTitle("提示");
-				mMaterialDialog.show();
-// You can change the message anytime. after show
-				mMaterialDialog.setMessage("你好，世界~");
+				boolean wrapInScrollView = true;
+				new MaterialDialog.Builder(RoomListing.this)
+						.title(R.string.create_new_room_dialog_title)
+						.customView(R.layout.custom_view_addroom_edittext, wrapInScrollView)
+						.positiveText(R.string.create_new_room_dialog_positive)
+						.negativeText(R.string.negative)
+						.build()
+						.show();
 			}
 		});
 
