@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -19,6 +20,7 @@ public class RoomListing extends ActionBarActivity {
 
 	ListView listView;
 	Toolbar toolbar;
+	ArrayList<String> rooms = new ArrayList<>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +38,16 @@ public class RoomListing extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				boolean wrapInScrollView = true;
-				new MaterialDialog.Builder(RoomListing.this)
+				MaterialDialog dialog = new MaterialDialog.Builder(RoomListing.this)
 						.title(R.string.create_new_room_dialog_title)
 						.customView(R.layout.custom_view_addroom_edittext, wrapInScrollView)
 						.positiveText(R.string.create_new_room_dialog_positive)
 						.negativeText(R.string.negative)
-						.build()
-						.show();
+						.build();
+
+				EditText text = (EditText) dialog.getCustomView();
+
+				dialog.show();
 			}
 		});
 
@@ -51,7 +56,7 @@ public class RoomListing extends ActionBarActivity {
 
 		toolbar.setTitle("Rooms");
 
-		ArrayList<String> rooms = new ArrayList<>();
+
 
 		//Defining new Adapter
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
