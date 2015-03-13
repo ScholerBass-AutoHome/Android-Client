@@ -25,13 +25,17 @@ public class RoomListing extends ActionBarActivity {
 	String newRoomName;
 
 	//TODO fix this
-	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
+	ArrayAdapter<String> adapter;
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_room_listing);
+
+		rooms.add("Living Room");
+
+		adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
 
 		ImageView icon = new ImageView(this);
 		icon.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_new));
