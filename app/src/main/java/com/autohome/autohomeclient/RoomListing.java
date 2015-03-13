@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -30,6 +31,37 @@ public class RoomListing extends ActionBarActivity {
 				.setContentView(icon)
 				.setBackgroundDrawable(R.drawable.button_action_pink_selector)
 				.build();
+
+		actionButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				MaterialDialog mMaterialDialog = new MaterialDialog()
+						.setTitle("MaterialDialog")
+						.setMessage("Hello world!")
+						.setPositiveButton("OK", new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								mMaterialDialog.dismiss();
+								...
+							}
+						})
+						.setNegativeButton("CANCEL", new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								mMaterialDialog.dismiss();
+								...
+							}
+						});
+
+				mMaterialDialog.show();
+
+// You can change the message anytime. before show
+				mMaterialDialog.setTitle("提示");
+				mMaterialDialog.show();
+// You can change the message anytime. after show
+				mMaterialDialog.setMessage("你好，世界~");
+			}
+		});
 
 		listView = (ListView) findViewById(R.id.list);
 		toolbar = (Toolbar) findViewById(R.id.toolbar);

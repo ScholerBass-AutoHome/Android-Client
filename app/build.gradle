@@ -41,4 +41,6 @@ dependencies {
 	compile project(':MaterialTabsModule')
 	//Showcase library
 	compile 'com.github.amlcurran.showcaseview:library:5.0.0'
+	//Another Material Dialogs library
+	compile 'me.drakeet.materialdialog:library:1.2.2'
 }
