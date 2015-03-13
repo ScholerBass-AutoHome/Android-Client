@@ -10,4 +10,5 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
     <color name="PRESSED_STATE_COLOR">#2196F3</color>
+	<color name="error">#FF0000</color>
 </resources>

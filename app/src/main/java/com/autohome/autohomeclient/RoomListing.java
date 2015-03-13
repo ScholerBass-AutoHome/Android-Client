@@ -7,12 +7,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,10 @@ public class RoomListing extends ActionBarActivity {
 	Toolbar toolbar;
 	ArrayList<String> rooms = new ArrayList<>();
 	String newRoomName;
+
+	//TODO fix this
+	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +52,26 @@ public class RoomListing extends ActionBarActivity {
 						.callback(new MaterialDialog.ButtonCallback() {
 							@Override
 							public void onPositive(MaterialDialog dialog) {
-								super.onPositive(dialog);
-								EditText text = (EditText) dialog.getCustomView();
+
+								MaterialEditText text = (MaterialEditText) dialog.getCustomView();
+
+								while (true) {
+									if (text.getText().toString() != null) {
+										newRoomName = text.getText().toString();
+										adapter.add(newRoomName);
+										super.onPositive(dialog);
+									} else {
+										Toast.makeText(RoomListing.this, "No Room Name", Toast.LENGTH_SHORT).show();
+										text.setPrimaryColor(getResources().getColor(R.color.error));
+									}
+								}
+
+
 							}
 						})
 						.build();
 
-
-
 				dialog.show();
-
 			}
 		});
 
@@ -64,11 +79,6 @@ public class RoomListing extends ActionBarActivity {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 		toolbar.setTitle("Rooms");
-
-
-
-		//Defining new Adapter
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.room_listing_list_item, android.R.id.text1, rooms);
 
 		//Assign adapter to listView
 		listView.setAdapter(adapter);
