@@ -1,12 +1,19 @@
 package com.autohome.autohomeclient;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.IOException;
 
 import it.gmariotti.cardslib.library.internal.Card;
 
@@ -58,8 +65,23 @@ public class SingleApplianceCard extends Card {
 			public void onClick(View v) {
 				Toast.makeText(context, "Clicked!!", Toast.LENGTH_SHORT).show();
 				applianceButton = (ImageButton) v;
- 				if (appliance.isStatus() == false) applianceButton.setImageResource(applianceImageResourceOn);
-				if (appliance.isStatus() == true) applianceButton.setImageResource(applianceImageResourceOff);
+				String addressStart = "http://192.168.5.252:8000/GPIO/";
+				String addressMiddle = "/function/";
+
+				HttpClient client = new DefaultHttpClient();
+
+				try {
+					if (!appliance.isStatus()) {
+						applianceButton.setImageResource(applianceImageResourceOn);
+						HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
+						client.execute(post);
+					}
+					if (appliance.isStatus()) {
+						applianceButton.setImageResource(applianceImageResourceOff);
+						HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
+						client.execute(post);
+					}
+				} catch (Exception e) {}
 
 				appliance.setStatus(!appliance.isStatus());
 			}

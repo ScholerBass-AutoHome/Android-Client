@@ -3,7 +3,6 @@ package com.autohome.autohomeclient;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,8 +32,8 @@ public class ApplianceListing extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 
-		for (int i = 0; i < 5; i++) {
-			Appliance appliance = new Appliance("Light", R.drawable.light_on, R.drawable.light_off, 2, 0, false);
+		for (int i = 0; i < 3; i++) {
+			Appliance appliance = new Appliance("Light", R.drawable.light_on, R.drawable.light_off, 2 + i, 0, false);
 			SingleApplianceCard card = new SingleApplianceCard(super.getActivity(), appliance);
 			cards.add(card);
 		}
