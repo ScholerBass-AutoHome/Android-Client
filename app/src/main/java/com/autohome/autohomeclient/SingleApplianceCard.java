@@ -63,25 +63,32 @@ public class SingleApplianceCard extends Card {
 		applianceButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(context, "Clicked!!", Toast.LENGTH_SHORT).show();
 				applianceButton = (ImageButton) v;
-				String addressStart = "http://192.168.5.252:8000/GPIO/";
-				String addressMiddle = "/function/";
 
-				HttpClient client = new DefaultHttpClient();
+				Thread thread = new Thread(new Runnable() {
+					@Override
+					public void run() {
+						String addressStart = "http://192.168.5.252:8000/GPIO/";
+						String addressMiddle = "/function/";
 
-				try {
-					if (!appliance.isStatus()) {
-						applianceButton.setImageResource(applianceImageResourceOn);
-						HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
-						client.execute(post);
+						HttpClient client = new DefaultHttpClient();
+						try {
+							if (!appliance.isStatus()) {
+								applianceButton.setImageResource(applianceImageResourceOn);
+								HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
+								client.execute(post);
+							}
+							if (appliance.isStatus()) {
+								applianceButton.setImageResource(applianceImageResourceOff);
+								HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
+								client.execute(post);
+							}
+						} catch (Exception e) {}
 					}
-					if (appliance.isStatus()) {
-						applianceButton.setImageResource(applianceImageResourceOff);
-						HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
-						client.execute(post);
-					}
-				} catch (Exception e) {}
+				});
+
+				thread.start();
+
 
 				appliance.setStatus(!appliance.isStatus());
 			}
