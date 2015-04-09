@@ -14,7 +14,7 @@ public class Appliance implements Serializable {
 
 	public Appliance() {}
 
-	public Appliance(String name, int imageResourceOn, int imageResourceOff, int GPIOPin, int outletIndex, boolean status) {
+	public Appliance(String name, int imageResourceOn, int imageResourceOff, boolean status) {
 		this.name = name;
 		this.imageResourceOn = imageResourceOn;
 		this.imageResourceOff = imageResourceOff;

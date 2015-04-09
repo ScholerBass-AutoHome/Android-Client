@@ -32,20 +32,22 @@ public class ApplianceListing extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 
+		View V = inflater.inflate(R.layout.fragment_appliance_listing, container, false);
+
 		for (int i = 0; i < 3; i++) {
-			Appliance appliance = new Appliance("Light", R.drawable.light_on, R.drawable.light_off, 2 + i, 0, false);
+			Appliance appliance = new Appliance("Light", R.drawable.light_on, R.drawable.light_off, false);
 			SingleApplianceCard card = new SingleApplianceCard(super.getActivity(), appliance);
 			cards.add(card);
 		}
 
 		CardGridArrayAdapter cardArrayAdapter = new CardGridArrayAdapter(super.getActivity(), cards);
-		cardGridView = (CardGridView) super.getActivity().findViewById(R.id.appliance_grid_view);
+		cardGridView = (CardGridView) V.findViewById(R.id.appliance_grid_view);
 
 		if (cardGridView != null) {
 			cardGridView.setAdapter(cardArrayAdapter);
 		}
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_appliance_listing, container, false);
+		return V;
 	}
 
 

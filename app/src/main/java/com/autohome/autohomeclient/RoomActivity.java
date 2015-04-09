@@ -20,7 +20,6 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 	MaterialTabHost tabHost;
 	ViewPager pager;
 	ViewPagerAdapter adapter;
-	Fragment[] fragments;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +30,6 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		if (extras != null) {
 			roomName = extras.getString(Shared.ROOM_NAME_INTENT_EXTRA_NAME);
 		}
-
-
 
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -50,6 +47,7 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 
 			}
 		});
+		pager.setOffscreenPageLimit(adapter.getCount() - 1);
 
 		// insert all tabs from pagerAdapter data
 		for (int i = 0; i < adapter.getCount(); i++) {
@@ -62,11 +60,6 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		}
 
 		toolbar.setTitle(roomName);
-
-		fragments = new Fragment[adapter.getCount()];
-		fragments[0] = new ApplianceListing();
-		fragments[1] = new ScheduleListing();
-		fragments[2] = new UnitListing();
 	}
 
 
@@ -93,7 +86,15 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		}
 
 		public android.support.v4.app.Fragment getItem(int num) {
-			return fragments[num];
+			switch (num) {
+				case 0:
+					return new ApplianceListing();
+				case 1:
+					return new ScheduleListing();
+				case 2:
+					return new UnitListing();
+			}
+			return new ApplianceListing();
 		}
 
 		@Override
