@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.autohome.autohomeclient" >
 
-	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -37,6 +37,10 @@
         <activity
             android:name=".GroupCreator"
             android:label="@string/title_activity_group_creator" >
+        </activity>
+        <activity
+            android:name=".ScheduleListing"
+            android:label="@string/title_activity_schedule_listing" >
         </activity>
     </application>
 

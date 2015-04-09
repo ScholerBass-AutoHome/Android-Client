@@ -84,12 +84,18 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		}
 
 		public android.support.v4.app.Fragment getItem(int num) {
+			switch (num) {
+				case 0:
+					return new ApplianceListing();
+				case 1:
+					return new ScheduleListing();
+			}
 			return new ApplianceListing();
 		}
 
 		@Override
 		public int getCount() {
-			return 2;
+			return 3;
 		}
 
 		@Override
@@ -98,6 +104,8 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 				case 0:
 					return "Appliances";
 				case 1:
+					return "Schedule";
+				case 2:
 					return "Units";
 				default:
 					return "";

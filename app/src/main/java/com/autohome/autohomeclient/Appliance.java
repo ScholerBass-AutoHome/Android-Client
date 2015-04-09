@@ -10,16 +10,14 @@ public class Appliance implements Serializable {
 	private String name;
 	private int imageResourceOn;
 	private int imageResourceOff;
-	private int GPIOPin;
-	private int outletIndex;
 	private boolean status = false;
+
+	public Appliance() {}
 
 	public Appliance(String name, int imageResourceOn, int imageResourceOff, int GPIOPin, int outletIndex, boolean status) {
 		this.name = name;
 		this.imageResourceOn = imageResourceOn;
 		this.imageResourceOff = imageResourceOff;
-		this.GPIOPin = GPIOPin;
-		this.outletIndex = outletIndex;
 		this.status = status;
 	}
 
@@ -45,22 +43,6 @@ public class Appliance implements Serializable {
 
 	public void setImageResourceOff(int imageResourceOff) {
 		this.imageResourceOff = imageResourceOff;
-	}
-
-	public int getGPIOPin() {
-		return GPIOPin;
-	}
-
-	public void setGPIOPin(int GPIOPin) {
-		this.GPIOPin = GPIOPin;
-	}
-
-	public int getOutletIndex() {
-		return outletIndex;
-	}
-
-	public void setOutletIndex(int outletIndex) {
-		this.outletIndex = outletIndex;
 	}
 
 	public boolean isStatus() {
