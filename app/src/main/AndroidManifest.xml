@@ -42,6 +42,10 @@
             android:name=".ScheduleListing"
             android:label="@string/title_activity_schedule_listing" >
         </activity>
+        <activity
+            android:name=".UnitListing"
+            android:label="@string/title_activity_unit_listing" >
+        </activity>
     </application>
 
 </manifest>

@@ -65,29 +65,29 @@ public class SingleApplianceCard extends Card {
 			public void onClick(View v) {
 				applianceButton = (ImageButton) v;
 
-				Thread thread = new Thread(new Runnable() {
-					@Override
-					public void run() {
-						String addressStart = "http://192.168.5.252:8000/GPIO/";
-						String addressMiddle = "/function/";
+//				Thread thread = new Thread(new Runnable() {
+//					@Override
+//					public void run() {
+//						String addressStart = "http://192.168.5.252:8000/GPIO/";
+//						String addressMiddle = "/function/";
+//
+//						HttpClient client = new DefaultHttpClient();
+//						try {
+//							if (!appliance.isStatus()) {
+//								applianceButton.setImageResource(applianceImageResourceOn);
+//								HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
+//								client.execute(post);
+//							}
+//							if (appliance.isStatus()) {
+//								applianceButton.setImageResource(applianceImageResourceOff);
+//								HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
+//								client.execute(post);
+//							}
+//						} catch (Exception e) {}
+//					}
+//				});
 
-						HttpClient client = new DefaultHttpClient();
-						try {
-							if (!appliance.isStatus()) {
-								applianceButton.setImageResource(applianceImageResourceOn);
-								HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
-								client.execute(post);
-							}
-							if (appliance.isStatus()) {
-								applianceButton.setImageResource(applianceImageResourceOff);
-								HttpPost post = new HttpPost(addressStart + appliance.getGPIOPin() + addressMiddle + !appliance.isStatus());
-								client.execute(post);
-							}
-						} catch (Exception e) {}
-					}
-				});
-
-				thread.start();
+//				thread.start();
 
 
 				appliance.setStatus(!appliance.isStatus());

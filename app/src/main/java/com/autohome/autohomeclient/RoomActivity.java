@@ -1,6 +1,7 @@
 package com.autohome.autohomeclient;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -19,6 +20,7 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 	MaterialTabHost tabHost;
 	ViewPager pager;
 	ViewPagerAdapter adapter;
+	Fragment[] fragments;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,11 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		if (extras != null) {
 			roomName = extras.getString(Shared.ROOM_NAME_INTENT_EXTRA_NAME);
 		}
+
+		fragments = new Fragment[adapter.getCount()];
+		fragments[0] = new ApplianceListing();
+		fragments[1] = new ScheduleListing();
+		fragments[2] = new UnitListing();
 
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -84,13 +91,7 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		}
 
 		public android.support.v4.app.Fragment getItem(int num) {
-			switch (num) {
-				case 0:
-					return new ApplianceListing();
-				case 1:
-					return new ScheduleListing();
-			}
-			return new ApplianceListing();
+			return fragments[num];
 		}
 
 		@Override
