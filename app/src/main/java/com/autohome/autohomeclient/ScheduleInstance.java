@@ -14,4 +14,5 @@ public class ScheduleInstance implements Serializable {
 	private int min;
 	private boolean[] days;
 	private boolean repeat;
+	private ArrayList<Appliance> appliances = new ArrayList<Appliance>();
 }
