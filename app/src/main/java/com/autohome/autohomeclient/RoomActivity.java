@@ -32,10 +32,7 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 			roomName = extras.getString(Shared.ROOM_NAME_INTENT_EXTRA_NAME);
 		}
 
-		fragments = new Fragment[adapter.getCount()];
-		fragments[0] = new ApplianceListing();
-		fragments[1] = new ScheduleListing();
-		fragments[2] = new UnitListing();
+
 
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -65,6 +62,11 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 		}
 
 		toolbar.setTitle(roomName);
+
+		fragments = new Fragment[adapter.getCount()];
+		fragments[0] = new ApplianceListing();
+		fragments[1] = new ScheduleListing();
+		fragments[2] = new UnitListing();
 	}
 
 
