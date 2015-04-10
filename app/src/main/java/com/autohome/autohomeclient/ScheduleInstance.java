@@ -9,7 +9,6 @@ import java.util.HashMap;
  */
 public class ScheduleInstance implements Serializable {
 
-	private String name;
 	private int hour;
 	private int min;
 	private boolean[] days;
