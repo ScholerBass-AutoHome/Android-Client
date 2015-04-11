@@ -33,7 +33,8 @@ public class SingleApplianceCard extends Card {
 	public SingleApplianceCard(Context context, Appliance appliance) {
 		super(context, R.layout.single_appliance_card);
 		this.appliance = appliance;
-		init(this.appliance.getName(), this.appliance.getImageResourceOn(), this.appliance.getImageResourceOff());
+		init(this.appliance.name, Shared.IMAGE_RESOLVER(this.appliance.imageIndexOn),
+				Shared.IMAGE_RESOLVER(this.appliance.imageIndexOff));
 		this.context = context;
 	}
 
@@ -59,14 +60,14 @@ public class SingleApplianceCard extends Card {
 				applianceButton = (ImageButton) v;
 
 
-				if (!appliance.isStatus()) {
+				if (!appliance.status) {
 					applianceButton.setImageResource(applianceImageResourceOn);
 				}
-				if (appliance.isStatus()) {
+				if (appliance.status) {
 					applianceButton.setImageResource(applianceImageResourceOff);
 				}
 
-				appliance.setStatus(!appliance.isStatus());
+				appliance.status = !appliance.status;
 			}
 		});
 	}

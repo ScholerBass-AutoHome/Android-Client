@@ -35,7 +35,7 @@ public class ApplianceListing extends Fragment {
 		View V = inflater.inflate(R.layout.fragment_appliance_listing, container, false);
 
 		for (int i = 0; i < 3; i++) {
-			Appliance appliance = new Appliance("Light", R.drawable.light_on, R.drawable.light_off, false);
+			Appliance appliance = new Appliance("Light", 0, 1, false, new Outlet(0, i));
 			SingleApplianceCard card = new SingleApplianceCard(super.getActivity(), appliance);
 			cards.add(card);
 		}

@@ -13,7 +13,7 @@ public class ApplianceGroup implements Serializable {
 
 	public void removeAppliance(Appliance appliance) {
 		for (int i = 0; i < appliances.size(); i++) {
-			if (appliance.getName().equals(appliances.get(i).getName())) {
+			if (appliance.name.equals(appliances.get(i).name)) {
 				appliances.remove(i);
 			}
 		}

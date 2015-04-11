@@ -19,7 +19,7 @@ public class Appliance {
 		outlet = new Outlet();
 	}
 
-	public Appliance(String name, int imageIndexOn, boolean status,
+	public Appliance(String name, int imageIndexOn, int imageIndexOff, boolean status,
 					 Outlet outlet) {
 		this.name = name;
 		this.imageIndexOn = imageIndexOn;
