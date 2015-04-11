@@ -1,17 +1,18 @@
 package com.autohome.autohomeclient;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by benscholer on 4/8/15.
  */
-public class ScheduleInstance implements Serializable {
+public class ScheduleInstance {
 
-	private int hour;
-	private int min;
+	private Date start;
+	private Date end;
 	private boolean[] days;
+	//[true, false, false, true, true, true...]
 	private boolean repeat;
-	private ArrayList<Appliance> appliances = new ArrayList<Appliance>();
+	private boolean status;
+
+	private ArrayList<Integer> pins = new ArrayList<Integer>(); //TODO
 }
