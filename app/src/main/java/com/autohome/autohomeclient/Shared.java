@@ -20,7 +20,7 @@ public class Shared {
 			case 1:
 				return R.drawable.light_off;
 			default:
-				return 0; 
+				return 0;
 		}
 	}
 
