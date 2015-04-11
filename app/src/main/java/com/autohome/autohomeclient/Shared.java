@@ -1,7 +1,6 @@
 package com.autohome.autohomeclient;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by benscholer on 3/7/15.
@@ -28,6 +27,6 @@ public class Shared {
 //		for (Map.Entry<OutletSerial, String> entry: outletMap) {
 			//TODO figure this stuff out.
 //		}
-		return "";
+		return "  ";
 	}
 }
