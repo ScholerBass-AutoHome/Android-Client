@@ -6,9 +6,12 @@
 
 	<ListView
 		android:id="@+id/schedule_list"
-		android:divider="#00000000"
+		android:divider="@drawable/list_divider"
+		android:dividerHeight="@dimen/card_base_cardwithlist_dividerHeight"
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent">
 	</ListView>
+
+
 
 </RelativeLayout>

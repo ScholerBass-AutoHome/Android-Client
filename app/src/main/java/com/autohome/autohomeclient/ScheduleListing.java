@@ -1,15 +1,14 @@
 package com.autohome.autohomeclient;
 
+import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.AbsListView;
 import android.widget.ListView;
-
-import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -18,11 +17,12 @@ public class ScheduleListing extends Fragment {
 
 	ListView listView;
 	ArrayList<ScheduleInstance> scheduleInstances = new ArrayList<>();
+	RoomActivity activity;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-
+		View V = inflater.inflate(R.layout.fragment_schedule_listing, container, false);
 		Resources res = getResources();
 
 		for (int i = 0; i < 10; i++) {
@@ -31,23 +31,30 @@ public class ScheduleListing extends Fragment {
 					true, true, null));
 		}
 
-		View V = inflater.inflate(R.layout.fragment_schedule_listing, container, false);
-
 		listView = (ListView) V.findViewById(R.id.schedule_list);
-
-		ImageView icon = new ImageView(super.getActivity());
-		icon.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_new));
-		FloatingActionButton actionButton = new FloatingActionButton.Builder(super.getActivity())
-				.setContentView(icon)
-				.setBackgroundDrawable(R.drawable.button_action_pink_selector)
-				.co
-				.build();
 
 		ScheduleAdapter adapter = new ScheduleAdapter(super.getActivity(), scheduleInstances, res);
 
 		listView.setAdapter(adapter);
+		final int prevFirstItemPosition = listView.getFirstVisiblePosition();
+		listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
 
+			}
+
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+				if (firstVisibleItem > prevFirstItemPosition) activity.hideFAB();
+				else activity.showFAB();
+			}
+		});
 		return V;
 	}
 
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		this.activity = (RoomActivity) activity;
+	}
 }

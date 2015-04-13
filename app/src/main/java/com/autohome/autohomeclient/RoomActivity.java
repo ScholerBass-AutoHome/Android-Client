@@ -7,6 +7,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.animation.Animation;
+
+import com.software.shell.fab.ActionButton;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
@@ -16,22 +19,28 @@ import it.neokree.materialtabs.MaterialTabListener;
 public class RoomActivity extends ActionBarActivity implements MaterialTabListener {
 
 	String roomName;
-	Toolbar toolbar;
 	MaterialTabHost tabHost;
 	ViewPager pager;
 	ViewPagerAdapter adapter;
+	ActionButton actionButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_room);
 
+		actionButton = (ActionButton) findViewById(R.id.fab);
+		actionButton.setButtonColor(getResources().getColor(R.color.fab_material_pink_500));
+		actionButton.setButtonColorPressed(getResources().getColor(R.color.fab_material_pink_900));
+		actionButton.setImageDrawable(getResources().getDrawable(R.drawable.fab_plus_icon));
+		actionButton.setShowAnimation(ActionButton.Animations.SCALE_UP);
+		actionButton.setHideAnimation(ActionButton.Animations.SCALE_DOWN);
+		actionButton.show();
+
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			roomName = extras.getString(Shared.ROOM_NAME_INTENT_EXTRA_NAME);
 		}
-
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 		tabHost = (MaterialTabHost) this.findViewById(R.id.room_tabHost);
 		pager = (ViewPager) this.findViewById(R.id.room_pager);
@@ -43,8 +52,9 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 			@Override
 			public void onPageSelected(int position) {
 				// when user do a swipe the selected tab change
+				actionButton.hide();
 				tabHost.setSelectedNavigationItem(position);
-
+				actionButton.show();
 			}
 		});
 		pager.setOffscreenPageLimit(adapter.getCount() - 1);
@@ -58,24 +68,35 @@ public class RoomActivity extends ActionBarActivity implements MaterialTabListen
 			);
 
 		}
-
-		toolbar.setTitle(roomName);
 	}
 
 
 	@Override
 	public void onTabSelected(MaterialTab tab) {
 		pager.setCurrentItem(tab.getPosition());
+		actionButton.show();
 	}
 
 	@Override
 	public void onTabReselected(MaterialTab tab) {
-
+		actionButton.show();
 	}
 
 	@Override
-	public void onTabUnselected(MaterialTab tab) {
+	public void onTabUnselected(MaterialTab tab) {}
 
+	public void hideFAB() {
+		Animation anim = actionButton.getHideAnimation();
+		actionButton.setHideAnimation(ActionButton.Animations.JUMP_TO_DOWN);
+		actionButton.hide();
+		actionButton.setHideAnimation(anim);
+	}
+
+	public void showFAB() {
+		Animation anim = actionButton.getShowAnimation();
+		actionButton.setShowAnimation(ActionButton.Animations.JUMP_FROM_DOWN);
+		actionButton.show();
+		actionButton.setShowAnimation(anim);
 	}
 
 	private class ViewPagerAdapter extends FragmentStatePagerAdapter {
