@@ -14,5 +14,5 @@ public class ScheduleInstance {
 	private boolean repeat;
 	private boolean status;
 
-	private ArrayList<Integer> pins = new ArrayList<Integer>(); //TODO
+	private ArrayList<Integer> pins = new ArrayList<Integer>(); //TODO figure out what data type this should be
 }

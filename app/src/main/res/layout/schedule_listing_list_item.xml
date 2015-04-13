@@ -3,30 +3,79 @@
 				xmlns:materialdesign="http://schemas.android.com/tools"
 				android:orientation="vertical"
 				android:layout_width="match_parent"
-				android:layout_height="100dp"
+				android:layout_height="88dp"
 				android:id="@+id/schedule_list_item"
 				android:padding="8dp">
 
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:textSize="50sp"
+		android:textSize="35sp"
 		android:text="6:00"
 		android:padding="0dp"
-		android:id="@+id/schedule_time_text"
+		android:id="@+id/start_schedule_time_text"
 		android:fontFamily="sans_serif_thin"
 		android:layout_alignParentTop="true"
 		android:layout_alignParentLeft="true"
+		android:textColor="@color/primary_text"
 		android:layout_alignParentStart="true"/>
 
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:textSize="20sp"
+		android:textSize="15sp"
 		android:text=" AM"
+		android:layout_alignParentTop="true"
+		android:layout_marginTop="6dp"
 		android:fontFamily="sans_serif_light"
-		android:layout_toRightOf="@+id/schedule_time_text"
-		android:layout_toEndOf="@+id/schedule_time_text"/>
+		android:id="@+id/start_schedule_ampm"
+		android:layout_toRightOf="@+id/start_schedule_time_text"
+		android:textColor="@color/primary_text"
+		android:layout_toEndOf="@+id/start_schedule_time_text"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text=" - "
+		android:textSize="35sp"
+		android:id="@+id/time_seperator_hyphen"
+		android:textColor="@color/primary_text"
+		android:layout_alignParentTop="true"
+		android:layout_toRightOf="@+id/start_schedule_ampm"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="35sp"
+		android:text="7:00"
+		android:padding="0dp"
+		android:id="@+id/end_schedule_time_text"
+		android:fontFamily="sans_serif_thin"
+		android:layout_alignParentTop="true"
+		android:layout_toRightOf="@+id/time_seperator_hyphen"
+		android:textColor="@color/primary_text"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="15sp"
+		android:text=" AM"
+		android:layout_alignParentTop="true"
+		android:layout_marginTop="6dp"
+		android:fontFamily="sans_serif_light"
+		android:id="@+id/end_schedule_ampm"
+		android:layout_toRightOf="@+id/end_schedule_time_text"
+		android:textColor="@color/primary_text"
+		android:layout_toEndOf="@+id/end_schedule_time_text"/>
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/start_schedule_time_text"
+		android:id="@+id/schedule_item_name"
+		android:textColor="@color/secondary_text"
+		android:textSize="16dp"
+		android:text="Morning Alarm"/>
 
 	<com.gc.materialdesign.views.Switch
 		android:id="@+id/switchView"
@@ -35,6 +84,6 @@
 		android:background="#1E88E5"
 		android:layout_alignParentRight="true"
 		android:layout_alignParentEnd="true"
-		android:layout_alignParentTop="true"
-		materialdesign:check="true" />
+		android:layout_centerVertical="true"
+		materialdesign:check="false" />
 </RelativeLayout>
