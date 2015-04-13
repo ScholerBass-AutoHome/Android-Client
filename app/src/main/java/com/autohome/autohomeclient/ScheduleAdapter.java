@@ -11,6 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.Switch;
+
 import java.util.ArrayList;
 
 /**
@@ -62,96 +64,96 @@ public class ScheduleAdapter extends BaseAdapter {
 		return position;
 	}
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		return null;
-	}
-
-	/**
-	 * ****** Create a holder Class to contain inflated xml file elements ********
-	 */
 	public static class ViewHolder {
 
-		public TextView text;
-		public TextView text1;
-		public TextView textWide;
-		public ImageView image;
+		public TextView startScheduleTimeText;
+		public TextView startScheduleAMPM;
+		public TextView endScheduleTimeText;
+		public TextView endScheduleAMPM;
+		public TextView name;
+		public Switch aSwitch;
 
 	}
 
 	/**
 	 * *** Depends upon data size called for each row , Create each ListView row ****
 	 */
-//	public View getView(int position, View convertView, ViewGroup parent) {
-//
-//		View vi = convertView;
-//		ViewHolder holder;
-//
-//		if (convertView == null) {
-//
-//			/****** Inflate tabitem.xml file for each row ( Defined below ) *******/
-//			vi = inflater.inflate(R.layout.tabitem, null);
-//
-//			/****** View Holder Object to contain tabitem.xml file elements ******/
-//
-//			holder = new ViewHolder();
-//			holder.text = (TextView) vi.findViewById(R.id.text);
-//			holder.text1 = (TextView) vi.findViewById(R.id.text1);
-//			holder.image = (ImageView) vi.findViewById(R.id.image);
-//
-//			/************  Set holder with LayoutInflater ************/
-//			vi.setTag(holder);
-//		} else
-//			holder = (ViewHolder) vi.getTag();
-//
-//		if (data.size() <= 0) {
-//			holder.text.setText("No Data");
-//
-//		} else {
-//			/***** Get each Model object from Arraylist ********/
-//			tempValues = null;
-//			tempValues = (ListModel) data.get(position);
-//
-//			/************  Set Model values in Holder elements ***********/
-//
-//			holder.text.setText(tempValues.getCompanyName());
-//			holder.text1.setText(tempValues.getUrl());
-//			holder.image.setImageResource(
-//					res.getIdentifier(
-//							"com.androidexample.customlistview:drawable/" + tempValues.getImage()
-//							, null, null));
-//
-//			/******** Set Item Click Listner for LayoutInflater for each row *******/
-//
-//			vi.setOnClickListener(new OnItemClickListener(position));
-//		}
-//		return vi;
-//	}
-//
-//	@Override
-//	public void onClick(View v) {
-//		Log.v("CustomAdapter", "=====Row button clicked=====");
-//	}
-//
-//	/**
-//	 * ****** Called when Item click in ListView ***********
-//	 */
-//	private class OnItemClickListener implements View.OnClickListener {
-//		private int mPosition;
-//
-//		OnItemClickListener(int position) {
-//			mPosition = position;
-//		}
-//
-//		@Override
-//		public void onClick(View arg0) {
-//
-//
-//			CustomListViewAndroidExample sct = (CustomListViewAndroidExample) activity;
-//
-//			/****  Call  onItemClick Method inside CustomListViewAndroidExample Class ( See Below )****/
-//
-//			sct.onItemClick(mPosition);
-//		}
-//	}
+	public View getView(int position, View convertView, ViewGroup parent) {
+
+		View vi = convertView;
+		ViewHolder holder;
+
+		if (convertView == null) {
+
+			/****** Inflate tabitem.xml file for each row ( Defined below ) *******/
+			vi = inflater.inflate(R.layout.schedule_listing_list_item, null);
+
+			/****** View Holder Object to contain tabitem.xml file elements ******/
+
+			holder = new ViewHolder();
+			holder.startScheduleTimeText = (TextView) vi.findViewById(R.id.start_schedule_time_text);
+			holder.startScheduleAMPM = (TextView) vi.findViewById(R.id.start_schedule_ampm);
+			holder.endScheduleTimeText = (TextView) vi.findViewById(R.id.end_schedule_time_text);
+			holder.endScheduleAMPM = (TextView) vi.findViewById(R.id.end_schedule_ampm);
+			holder.name = (TextView) vi.findViewById(R.id.schedule_item_name);
+			holder.aSwitch = (Switch) vi.findViewById(R.id.schedule_switch);
+
+			/************  Set holder with LayoutInflater ************/
+			vi.setTag(holder);
+		} else
+			holder = (ViewHolder) vi.getTag();
+
+		if (data.size() <= 0) {
+			holder.name.setText("No Data");
+			//TODO change this so it doesn't suck.
+
+		} else {
+			/***** Get each Model object from Arraylist ********/
+			tempValues = null;
+			tempValues = (ScheduleInstance) data.get(position);
+
+			/************  Set Model values in Holder elements ***********/
+
+			holder.startScheduleTimeText.setText(tempValues.start.toPrettyString()[0]);
+			holder.startScheduleAMPM.setText(tempValues.start.toPrettyString()[1]);
+			holder.endScheduleTimeText.setText(tempValues.end.toPrettyString()[0]);
+			holder.endScheduleAMPM.setText(tempValues.end.toPrettyString()[1]);
+			holder.name.setText(tempValues.name);
+			holder.aSwitch.setChecked(tempValues.status);
+
+			/******** Set Item Click Listner for LayoutInflater for each row *******/
+
+			//TODO Add stuff to do on the onClick.
+
+			vi.setOnClickListener(new OnItemClickListener(position));
+		}
+		return vi;
+	}
+
+	@Override
+	public void onClick(View v) {
+		Log.v("CustomAdapter", "=====Row button clicked=====");
+	}
+
+	/**
+	 * ****** Called when Item click in ListView ***********
+	 */
+	private class OnItemClickListener implements View.OnClickListener {
+		private int mPosition;
+
+		OnItemClickListener(int position) {
+			mPosition = position;
+		}
+
+		@Override
+		public void onClick(View arg0) {
+
+
+			CustomListViewAndroidExample sct = (CustomListViewAndroidExample) activity;
+
+			/****  Call  onItemClick Method inside CustomListViewAndroidExample Class ( See Below )****/
+
+			sct.onItemClick(mPosition);
+		}
+	}
 }

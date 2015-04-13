@@ -1,20 +1,17 @@
 package com.autohome.autohomeclient;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 /**
  * Created by benscholer on 4/11/15.
  */
 public class Date {
 
-	public int year;	// e.g. 1998, 2016
-	public int month;	// 1 = January, 12 = December
-	public int day;		// 1 - 30
-	public int hour;	// 1 - 24
-	public int min;		// 0 - 24
+	public int year;    // e.g. 1998, 2016
+	public int month;    // 1 = January, 12 = December
+	public int day;        // 1 - 30
+	public int hour;    // 1 - 24
+	public int min;        // 0 - 24
 
 	public Date(int year, int month, int day, int hour, int min) {
 		this.year = year;
@@ -30,17 +27,8 @@ public class Date {
 	}
 
 	public String[] toPrettyString() {
-		String[] time = new String[3];
+		String[] time = new String[2];
 		String twentyfour = hour + ":" + min;
-
-		try {
-			final SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
-			final java.util.Date dateObj = sdf.parse(twentyfour);
-			System.out.println(dateObj);
-			System.out.println(new SimpleDateFormat("K:mm").format(dateObj));
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
 
 		String suffix = " AM";
 		int adjustedHour = 0;
@@ -55,11 +43,8 @@ public class Date {
 			}
 		}
 
-		time[0] = adjustedHour + "";
-		time[1] = this.min + "" + "" + "" + "" + "";
-		time[2] = suffix;
-
-
+		time[0] = adjustedHour + ":" + this.min;
+		time[1] = suffix;
 
 		return time;
 	}

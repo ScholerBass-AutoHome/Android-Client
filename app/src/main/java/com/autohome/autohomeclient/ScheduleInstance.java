@@ -8,6 +8,7 @@ import java.util.HashMap;
  */
 public class ScheduleInstance {
 
+	public String name;
 	public Date start;
 	public Date end;
 	public boolean[] days;
@@ -16,4 +17,14 @@ public class ScheduleInstance {
 	public boolean status;
 
 	public HashMap<OutletSerial, Boolean> pins = new HashMap<>();
+
+	public ScheduleInstance(String name, Date start, Date end, boolean[] days, boolean repeat, boolean status, HashMap<OutletSerial, Boolean> pins) {
+		this.name = name;
+		this.start = start;
+		this.end = end;
+		this.days = days;
+		this.repeat = repeat;
+		this.status = status;
+		this.pins = pins;
+	}
 }
