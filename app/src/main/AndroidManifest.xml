@@ -31,7 +31,7 @@
             android:label="@string/title_activity_rooms" >
         </activity>
         <activity
-            android:name=".RoomActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_room" >
         </activity>
         <activity

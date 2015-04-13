@@ -17,7 +17,7 @@ public class ScheduleListing extends Fragment {
 
 	ListView listView;
 	ArrayList<ScheduleInstance> scheduleInstances = new ArrayList<>();
-	RoomActivity activity;
+	MainActivity activity;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +55,6 @@ public class ScheduleListing extends Fragment {
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		this.activity = (RoomActivity) activity;
+		this.activity = (MainActivity) activity;
 	}
 }

@@ -3,7 +3,6 @@ package com.autohome.autohomeclient;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -90,7 +89,7 @@ public class RoomListing extends ActionBarActivity {
 
 				String roomName = (String) listView.getItemAtPosition(position);
 
-				Intent intent = new Intent(getBaseContext(), RoomActivity.class);
+				Intent intent = new Intent(getBaseContext(), MainActivity.class);
 				intent.putExtra(Shared.ROOM_NAME_INTENT_EXTRA_NAME, roomName);
 				startActivity(intent);
 			}

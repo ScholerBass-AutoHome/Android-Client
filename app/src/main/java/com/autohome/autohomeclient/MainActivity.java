@@ -16,7 +16,7 @@ import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
 
 
-public class RoomActivity extends ActionBarActivity implements MaterialTabListener {
+public class MainActivity extends ActionBarActivity implements MaterialTabListener {
 
 	String roomName;
 	MaterialTabHost tabHost;

@@ -44,7 +44,7 @@ public class Login extends ActionBarActivity {
     }
 
 	public void login (View view) {
-		startActivity(new Intent(this, RoomActivity.class));
+		startActivity(new Intent(this, MainActivity.class));
 	}
 
 }

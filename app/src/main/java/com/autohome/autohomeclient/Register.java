@@ -55,7 +55,7 @@ public class Register extends ActionBarActivity {
     }
 
 	public void register (View view) {
-		startActivity(new Intent(this, RoomActivity.class));
+		startActivity(new Intent(this, MainActivity.class));
 	}
 
 

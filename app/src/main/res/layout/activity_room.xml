@@ -3,7 +3,7 @@
 				xmlns:app="http://schemas.android.com/apk/res-auto"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				tools:context="com.autohome.autohomeclient.RoomActivity">
+				tools:context="com.autohome.autohomeclient.MainActivity">
 
 	<it.neokree.materialtabs.MaterialTabHost
 		android:id="@+id/room_tabHost"
