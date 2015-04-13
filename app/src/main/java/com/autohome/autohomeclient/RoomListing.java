@@ -20,11 +20,9 @@ import java.util.ArrayList;
 public class RoomListing extends ActionBarActivity {
 
 	ListView listView;
-	Toolbar toolbar;
 	ArrayList<String> rooms = new ArrayList<>();
 	String newRoomName;
 
-	//TODO fix this
 	ArrayAdapter<String> adapter;
 
 
@@ -80,9 +78,6 @@ public class RoomListing extends ActionBarActivity {
 		});
 
 		listView = (ListView) findViewById(R.id.list);
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-		toolbar.setTitle("Rooms");
 
 		//Assign adapter to listView
 		listView.setAdapter(adapter);

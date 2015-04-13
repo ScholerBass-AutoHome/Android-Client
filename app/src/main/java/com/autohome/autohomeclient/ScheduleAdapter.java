@@ -3,15 +3,14 @@ package com.autohome.autohomeclient;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.support.v7.widget.SwitchCompat;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.Switch;
+
 
 import java.util.ArrayList;
 
@@ -49,6 +48,7 @@ public class ScheduleAdapter extends BaseAdapter {
 	/**
 	 * ***** What is the size of Passed Arraylist Size ***********
 	 */
+	@Override
 	public int getCount() {
 
 		if (data.size() <= 0)
@@ -56,10 +56,12 @@ public class ScheduleAdapter extends BaseAdapter {
 		return data.size();
 	}
 
+	@Override
 	public Object getItem(int position) {
 		return position;
 	}
 
+	@Override
 	public long getItemId(int position) {
 		return position;
 	}
@@ -71,13 +73,11 @@ public class ScheduleAdapter extends BaseAdapter {
 		public TextView endScheduleTimeText;
 		public TextView endScheduleAMPM;
 		public TextView name;
-		public Switch aSwitch;
+		public SwitchCompat aSwitch;
 
 	}
 
-	/**
-	 * *** Depends upon data size called for each row , Create each ListView row ****
-	 */
+	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
 		View vi = convertView;
@@ -96,7 +96,7 @@ public class ScheduleAdapter extends BaseAdapter {
 			holder.endScheduleTimeText = (TextView) vi.findViewById(R.id.end_schedule_time_text);
 			holder.endScheduleAMPM = (TextView) vi.findViewById(R.id.end_schedule_ampm);
 			holder.name = (TextView) vi.findViewById(R.id.schedule_item_name);
-			holder.aSwitch = (Switch) vi.findViewById(R.id.schedule_switch);
+			holder.aSwitch = (SwitchCompat) vi.findViewById(R.id.schedule_switch);
 
 			/************  Set holder with LayoutInflater ************/
 			vi.setTag(holder);
@@ -123,37 +123,7 @@ public class ScheduleAdapter extends BaseAdapter {
 
 			/******** Set Item Click Listner for LayoutInflater for each row *******/
 
-			//TODO Add stuff to do on the onClick.
-
-			vi.setOnClickListener(new OnItemClickListener(position));
 		}
 		return vi;
-	}
-
-	@Override
-	public void onClick(View v) {
-		Log.v("CustomAdapter", "=====Row button clicked=====");
-	}
-
-	/**
-	 * ****** Called when Item click in ListView ***********
-	 */
-	private class OnItemClickListener implements View.OnClickListener {
-		private int mPosition;
-
-		OnItemClickListener(int position) {
-			mPosition = position;
-		}
-
-		@Override
-		public void onClick(View arg0) {
-
-
-			CustomListViewAndroidExample sct = (CustomListViewAndroidExample) activity;
-
-			/****  Call  onItemClick Method inside CustomListViewAndroidExample Class ( See Below )****/
-
-			sct.onItemClick(mPosition);
-		}
 	}
 }
