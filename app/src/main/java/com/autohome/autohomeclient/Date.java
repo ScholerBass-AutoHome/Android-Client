@@ -29,6 +29,7 @@ public class Date {
 	public String[] toPrettyString() {
 		String[] time = new String[2];
 		String twentyfour = hour + ":" + min;
+		String minute;
 
 		String suffix = " AM";
 		int adjustedHour = 0;
@@ -43,7 +44,13 @@ public class Date {
 			}
 		}
 
-		time[0] = adjustedHour + ":" + this.min;
+		if (min > 9) {
+			minute = min + "";
+		} else {
+			minute = "0" + min;
+		}
+
+		time[0] = adjustedHour + ":" + minute;
 		time[1] = suffix;
 
 		return time;
