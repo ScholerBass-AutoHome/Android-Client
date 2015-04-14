@@ -1,5 +1,6 @@
 package com.autohome.autohomeclient;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,7 +8,10 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.animation.Animation;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.software.shell.fab.ActionButton;
 
@@ -137,5 +141,18 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 			}
 		}
 
+	}
+
+	public void fabClick(View view) {
+		TimePickerDialog tpd = new TimePickerDialog(this,
+				new TimePickerDialog.OnTimeSetListener() {
+
+					@Override
+					public void onTimeSet(TimePicker view, int hourOfDay,
+										  int minute) {
+						Toast.makeText(getApplicationContext(), hourOfDay + ":" + minute, Toast.LENGTH_LONG);
+					}
+				}, 0, 0, false);
+		tpd.show();
 	}
 }

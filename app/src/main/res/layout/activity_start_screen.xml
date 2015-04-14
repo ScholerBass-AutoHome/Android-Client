@@ -42,6 +42,20 @@
             android:fontFamily="sans-serif-medium"
             android:onClick="launch_login"/>
 
+		<Button
+			android:id="@+id/start_bypass_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="bypass"
+			android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"
+			android:textColor="@color/primary_text"
+			android:background="@drawable/button"
+			android:theme="@style/Base.TextAppearance.AppCompat.Button"
+			android:textAllCaps="true"
+			android:fontFamily="sans-serif-medium"
+			android:onClick="bypass"/>
+
         <Button
             android:id="@+id/start_register_button"
             android:layout_width="wrap_content"
