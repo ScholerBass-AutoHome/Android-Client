@@ -13,4 +13,5 @@ Although I do not have anything working yet, and am still working through UI/UX 
 * Appliance scheduling
 * Adding/deleting/editing of appliances (aliases for outlets)
 * Adding units
+
 By v2 of the app, I hope to have NFC tags working (tap to toggle). If you have anything you would like to see, please shoot me a message on here, or an email: benscholer3248511@gmail.com
